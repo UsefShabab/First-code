@@ -1,2 +1,46 @@
-<butto>First Website</butto>
-<p>لا تيأس من الخطوات الصغيرة فهي كبيرة ان هذا مشهود في العديد من القصص</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px auto;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="changeTextBtn">Change Text</button>
+    <button id="changeColorBtn">Change Color</button>
+    <div id="box">Hello!</div>
+
+    <script>
+        
+        const box = document.getElementById("box");
+        const textButton = document.getElementById("changeTextBtn");
+        const colorButton = document.getElementById("changeColorBtn");
+
+        textButton.addEventListener("click", function () {
+            box.textContent = "Text Changed!";
+        });
+
+
+        colorButton.addEventListener("click", function () {
+            const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            box.style.backgroundColor = randomColor;
+        });
+    </script>
+
+</body>
+</html>
